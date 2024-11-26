@@ -1,0 +1,149 @@
+/* 전체 레이아웃 */
+.message {
+  display: flex;
+  height: 100vh; /* 전체 화면 높이 */
+  background-color: #f8f9fa; /* 연한 배경색 */
+  font-family: Arial, sans-serif;
+}
+
+/* 메시지 창: 중간 */
+.message_chat {
+  flex: 7; /* 화면의 70% 차지 */
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  overflow: hidden;
+}
+
+/* 메시지 창 헤더 */
+.chat_header {
+  padding: 15px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* 메시지 목록 */
+.chat_messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* 메시지 간격 */
+}
+
+/* 메시지 버블 */
+.message_bubble {
+  max-width: 70%;
+  padding: 10px 15px;
+  margin: 5px 0;
+  border-radius: 15px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.message_bubble.incoming {
+  background-color: #e0e0e0; /* 수신 메시지 */
+  color: #333;
+  align-self: flex-start;
+}
+
+.message_bubble.outgoing {
+  background-color: #61dafb; /* 발신 메시지 */
+  color: white;
+  align-self: flex-end;
+}
+
+/* 입력 영역 */
+.chat_input {
+  display: flex;
+  padding: 15px;
+  background-color: #f7f7f7;
+  border-top: 1px solid #ddd;
+  gap: 10px;
+}
+
+.chat_input input {
+  flex: 1;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.chat_input button {
+  padding: 12px 25px;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.chat_input button:hover {
+  background-color: #4aaedb; /* 버튼 하이라이트 */
+}
+
+/* 연락처 목록: 오른쪽 */
+.message_contacts {
+  flex: 3; /* 화면의 30% 차지 */
+  background-color: #ffffff;
+  padding: 20px;
+  overflow-y: auto;
+  border-left: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.message_contacts h3 {
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* 연락처 카드 */
+.contact_card {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  transition: background-color 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+.contact_card:hover {
+  background-color: #61dafb;
+  color: white;
+  transform: scale(1.03); /* 살짝 확대 */
+}
+
+.contact_card.active {
+  background-color: #61dafb; /* 활성화된 연락처 */
+  color: white;
+  font-weight: bold;
+}
+
+.contact_card img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* 프로필 이미지 원형 */
+  margin-right: 10px;
+}
+
+.contact_card span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
